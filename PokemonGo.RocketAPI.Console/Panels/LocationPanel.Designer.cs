@@ -59,6 +59,7 @@ namespace PokeMaster
         /// </summary>
         private void InitializeComponent()
         {
+            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.map = new GMap.NET.WindowsForms.GMapControl();
             this.cbShowPokemon = new System.Windows.Forms.CheckBox();
             this.cbShowPokeStops = new System.Windows.Forms.CheckBox();
@@ -81,6 +82,7 @@ namespace PokeMaster
             this.buttonZoomIn = new System.Windows.Forms.Button();
             this.buttonLoadPokestops = new System.Windows.Forms.Button();
             this.buttonSavePokestops = new System.Windows.Forms.Button();
+
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRadius)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +95,7 @@ namespace PokeMaster
             this.map.Bearing = 0F;
             this.map.CanDragMap = true;
             this.map.EmptyTileColor = System.Drawing.Color.Navy;
+            this.map.Enabled = false;
             this.map.GrayScaleMode = false;
             this.map.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.map.LevelsKeepInMemmory = 5;
@@ -101,6 +104,7 @@ namespace PokeMaster
             this.map.MarkersEnabled = true;
             this.map.MaxZoom = 2;
             this.map.MinZoom = 2;
+            this.map.MouseWheelZoomEnabled = true;
             this.map.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
             this.map.Name = "map";
             this.map.NegativeMode = false;
@@ -110,7 +114,7 @@ namespace PokeMaster
             this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.map.ShowTileGridLines = false;
-            this.map.Size = new System.Drawing.Size(873, 501);
+            this.map.Size = new System.Drawing.Size(873, 328);
             this.map.TabIndex = 1;
             this.map.Zoom = 0D;
             this.map.OnMarkerClick += new GMap.NET.WindowsForms.MarkerClick(this.map_OnMarkerClick);
@@ -374,9 +378,37 @@ namespace PokeMaster
             this.buttonSavePokestops.UseVisualStyleBackColor = true;
             this.buttonSavePokestops.Click += new System.EventHandler(this.buttonSavePokestops_Click);
             // 
+            // gMapControl1
+            // 
+            this.gMapControl1.Bearing = 0F;
+            this.gMapControl1.CanDragMap = true;
+            this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMapControl1.GrayScaleMode = false;
+            this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMapControl1.LevelsKeepInMemmory = 5;
+            this.gMapControl1.Location = new System.Drawing.Point(423, 351);
+            this.gMapControl1.MarkersEnabled = true;
+            this.gMapControl1.MaxZoom = 2;
+            this.gMapControl1.MinZoom = 2;
+            this.gMapControl1.MouseWheelZoomEnabled = true;
+            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapControl1.Name = "gMapControl1";
+            this.gMapControl1.NegativeMode = false;
+            this.gMapControl1.PolygonsEnabled = true;
+            this.gMapControl1.RetryLoadTile = 0;
+            this.gMapControl1.RoutesEnabled = true;
+            this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMapControl1.ShowTileGridLines = false;
+            this.gMapControl1.Size = new System.Drawing.Size(150, 61);
+            this.gMapControl1.TabIndex = 49;
+            this.gMapControl1.Zoom = 0D;
+            this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
+            // 
             // LocationPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.Controls.Add(this.gMapControl1);
             this.Controls.Add(this.buttonLoadPokestops);
             this.Controls.Add(this.buttonSavePokestops);
             this.Controls.Add(this.buttonZoomIn);
@@ -396,5 +428,7 @@ namespace PokeMaster
             this.PerformLayout();
 
         }
+
+        private GMap.NET.WindowsForms.GMapControl gMapControl1;
     }
 }

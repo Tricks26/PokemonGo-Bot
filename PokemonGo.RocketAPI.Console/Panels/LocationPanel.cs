@@ -869,5 +869,10 @@ namespace PokeMaster
         {
             LoadPokestopsInfo();
         }
+
+        private void gMapControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
